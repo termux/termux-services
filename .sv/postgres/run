@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec postgres -D ~/.postgres/ 2>&1

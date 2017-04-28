@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec php-fpm -F -y ~/.php/php-fpm.conf -c ~/.php/php.ini 2>&1

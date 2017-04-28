@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec mysqld --basedir=$PREFIX --datadir=$HOME/drive/mysqldata 2>&1

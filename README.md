@@ -8,4 +8,8 @@
 
 You can also stop services with `sv down crond`
 
+# Caution
+
+A couple of services have specified config files and similar stuff. Be sure to change them to your needs.
+
 
