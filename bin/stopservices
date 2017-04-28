@@ -1,0 +1,16 @@
+export SVDIR="$HOME/.sv"
+
+echo "Stopping all services"
+cd $SVDIR
+sv down *
+echo "Sending SIGHUB to runsvdir"
+pkill --signal 1 runsvdir
+echo "Waiting for runsvdir to exit"
+while (pgrep runsvdir);do true;done
+echo "killing stuck runsv"
+pkill --signal 9 runsv
+pkill --signal 9 svlogd
+#echo "waiting for lock to end"
+#while [ -f "$PREFIX/var/run/runsvdir.lock" ];do true;done
+echo "removing locks"
+rm $PREFIX/var/run/runsvdir.lock

@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec privoxy --no-daemon $HOME/.config/privoxy/config 2>&1

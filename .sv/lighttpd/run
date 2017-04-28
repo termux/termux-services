@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec lighttpd -D -f ~/.lighttpd/lighttpd.conf 2>&1

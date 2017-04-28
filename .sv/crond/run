@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/sh
+exec crond -f -d 0 2>&1
