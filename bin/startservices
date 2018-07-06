@@ -1,4 +1,0 @@
-export SVDIR="$HOME/.sv"
-mkdir -p $PREFIX/var/run
-mkdir -p ~/.log
-daemonize -c $PREFIX -l $PREFIX/var/run/runsvdir.lock -p $PREFIX/var/run/runsvdir.pid $PREFIX/bin/applets/runsvdir $SVDIR 2>/dev/null||:

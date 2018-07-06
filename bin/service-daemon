@@ -1,0 +1,45 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+set -e
+start(){
+    start-stop-daemon -S -b -m -p $PIDFILE -x $DAEMON -- $DAEMON_OPTS
+}
+stop(){
+    start-stop-daemon -K -s 1 -o -p $PIDFILE
+    tail -f --pid=`cat $PIDFILE` /dev/null
+    for f in $SVDIR/*/supervise $SVDIR/*/log/supervise;do
+        kill -9 `cat $f/pid` 2>/dev/null ||:
+        rm -rf $f
+    done
+}
+# Must be a valid filename
+NAME=service-daemon
+PIDFILE=$PREFIX/var/run/$NAME.pid
+#This is the command to be run, give the full pathname
+DAEMON=$PREFIX/bin/applets/runsvdir
+DAEMON_OPTS="$SVDIR"
+
+case "$1" in
+    start)
+        echo -n "Starting daemon: "$NAME
+        start
+        echo "."
+        ;;
+    stop)
+        echo -n "Stopping daemon: "$NAME
+        stop
+        echo "."
+        ;;
+    restart)
+        echo -n "Restarting daemon: "$NAME
+        stop
+        start
+        echo "."
+        ;;
+
+    *)
+        echo "Usage: "$1" {start|stop|restart}"
+        exit 1
+esac
+
+exit 0

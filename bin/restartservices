@@ -1,5 +1,0 @@
-export SVDIR="$HOME/.sv"
-stopservices
-echo "starting the services"
-
-daemonize -c $PREFIX -l $PREFIX/var/run/runsvdir.lock -p $PREFIX/var/run/runsvdir.pid $PREFIX/bin/applets/runsvdir $SVDIR
