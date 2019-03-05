@@ -1,0 +1,20 @@
+#!/bin/sh
+
+show_help(){
+
+    printf 'Usage:
+    sv-disable <service-name>
+
+    Disabling a service will make it not autostart
+    '
+}
+if [ -z "$1" ];then
+    show_help
+    exit 1
+fi
+if [ -u "$SVDIR" ];then
+    >&2 echo "Error: SVDIR not set"
+    exit 1
+fi
+touch "$SVDIR/$1/down"
+sv down $1
