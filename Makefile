@@ -1,12 +1,9 @@
 termux-services:
 
 install: termux-services
-		cp sv-enable  $(PREFIX)/bin/
-		chmod +x $(PREFIX)/bin/sv-enable
-		cp sv-disable $(PREFIX)/bin/
-		chmod +x $(PREFIX)/bin/sv-disable
-		cp service-daemon $(PREFIX)/bin/
-		chmod +x $(PREFIX)/bin/service-daemon
+		install sv-enable  $(PREFIX)/bin/
+		install sv-disable $(PREFIX)/bin/
+		install service-daemon $(PREFIX)/bin/
 		mkdir -p $(PREFIX)/etc/profile.d/
 		cp start-services.sh $(PREFIX)/etc/profile.d
 		chmod +x $(PREFIX)/etc/profile.d/start-services.sh

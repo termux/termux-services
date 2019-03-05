@@ -6,7 +6,7 @@ show_help(){
     sv-enable <service-name>
 
     Enabling a service will make it autostart
-    '
+'
 }
 if [ -z "$1" ];then
     show_help

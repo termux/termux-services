@@ -6,7 +6,7 @@ show_help(){
     sv-disable <service-name>
 
     Disabling a service will make it not autostart
-    '
+'
 }
 if [ -z "$1" ];then
     show_help
