@@ -5,8 +5,7 @@ install: termux-services
 		install sv-disable $(PREFIX)/bin/
 		install service-daemon $(PREFIX)/bin/
 		mkdir -p $(PREFIX)/etc/profile.d/
-		cp start-services.sh $(PREFIX)/etc/profile.d
-		chmod +x $(PREFIX)/etc/profile.d/start-services.sh
+		install start-services.sh $(PREFIX)/etc/profile.d
 
 
 uninstall:
