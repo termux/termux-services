@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# Get the name of the service from the PWD, this assumes the name of the
+# service is one level above the log directory.
+pwd=${PWD%/*} # $SVDIR/service/foo/log
+service=${pwd##*/} # foo
+
+mkdir -p "$LOGDIR/sv/$service"
+
+exec svlogd -tt "$LOGDIR/sv/$service"
