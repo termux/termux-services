@@ -1,3 +1,3 @@
 export SVDIR=$PREFIX/var/service
 export LOGDIR=$PREFIX/var/log
-(termux-services start >/dev/null 2>&1 & )
+(service-daemon start >/dev/null 2>&1 & )
