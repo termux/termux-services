@@ -2,6 +2,7 @@
 
 set -e
 start(){
+    mkdir -p $PIDDIR
     start-stop-daemon -S -b -m -p $PIDFILE -x $DAEMON -- $DAEMON_OPTS
 }
 stop(){
@@ -14,7 +15,8 @@ stop(){
 }
 # Must be a valid filename
 NAME=service-daemon
-PIDFILE=$PREFIX/var/run/$NAME.pid
+PIDDIR=$PREFIX/var/run
+PIDFILE=$PIDDIR/$NAME.pid
 #This is the command to be run, give the full pathname
 DAEMON=$PREFIX/bin/applets/runsvdir
 DAEMON_OPTS="$SVDIR"
