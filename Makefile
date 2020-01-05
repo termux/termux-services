@@ -6,7 +6,7 @@ install: termux-services
 	install service-daemon $(PREFIX)/bin/
 	mkdir -p $(PREFIX)/etc/profile.d/
 	install start-services.sh $(PREFIX)/etc/profile.d
-	mkdir -p $(PREFIX)/etc/conf.d
+	mkdir -p $(PREFIX)/etc/fish/conf.d
 	install start-services.fish $(PREFIX)/etc/fish/conf.d
 	mkdir -p $(PREFIX)/share/termux-services
 	install svlogger $(PREFIX)/share/termux-services
