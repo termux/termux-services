@@ -1,8 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/sh
-mkdir -p ~/torrent/torrent-files
-mkdir -p ~/torrent/download
-exec transmission-daemon \
-    -f \
-    -c ~/torrent/torrent-files \
-    -w ~/torrent/download \
-    2>&1

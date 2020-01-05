@@ -1,2 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/sh
-exec nginx -p ~/.nginx -c ~/.nginx/nginx.conf 2>&1
