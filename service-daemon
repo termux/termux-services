@@ -3,7 +3,7 @@
 set -e
 start(){
     mkdir -p $PIDDIR
-    start-stop-daemon -S -b -m -p $PIDFILE -x $DAEMON -- $DAEMON_OPTS
+    start-stop-daemon -S -b -m -p $PIDFILE -x $DAEMON -d $PREFIX -- $DAEMON_OPTS
 }
 stop(){
     start-stop-daemon -K -s 1 -o -p $PIDFILE
