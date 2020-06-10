@@ -18,7 +18,7 @@ NAME=service-daemon
 PIDDIR=$PREFIX/var/run
 PIDFILE=$PIDDIR/$NAME.pid
 #This is the command to be run, give the full pathname
-DAEMON=$PREFIX/bin/applets/runsvdir
+DAEMON=$PREFIX/bin/runsvdir
 DAEMON_OPTS="$SVDIR"
 
 case "$1" in
