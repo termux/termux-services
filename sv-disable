@@ -12,7 +12,7 @@ if [ -z "$1" ];then
     show_help
     exit 1
 fi
-if [ -u "$SVDIR" ];then
+if [ -z "$SVDIR" ];then
     >&2 echo "Error: SVDIR not set"
     exit 1
 fi
